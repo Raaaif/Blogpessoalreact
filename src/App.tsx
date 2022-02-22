@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import Navbar from './Components/static/navbar/Navbar';
 import Login from './pages/login/login';
 import Footer from './Components/static/footer/footer'
+import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path='/home'>
               <Home />
+            </Route>
+            <Route path='/cadastrousuario'>
+              <CadastroUsuario />
             </Route>
           </div>
         </Switch>

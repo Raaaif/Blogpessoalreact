@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useState, ChangeEvent} from "react";
 import "./login.css";
 import {Grid, Box, Typography, TextField, Button} from '@material-ui/core';
 import {Link} from 'react-router-dom';
+import UserLogin from "../../models/UserLogin";
 
 function Login(){
+
+    const [userLogin, setUserLogin] = useState<UserLogin>(
+       {
+        id:0,
+        usuario: '',
+        senha: '',
+        token: ''
+       }
+    )
+
+function updatedModel(e: ChangeEvent<HTMLInputElement>){
+
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+}
+
+async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+
+    e.preventDefault();
+    console.log('userLogin: ' + Object.values(userLogin));
+}
+
     return (
         <Grid container direction='row' justifyContent='center' alignItems="center"  style={{backgroundColor:'black'}}>
             <Grid alignItems="center" xs={5}>
                 <Box paddingX={20}>
-                    <form>
+                    <form onSubmit={onSubmit}>
                     <img src="https://i.imgur.com/0IGWZjj.png" width="160px" height="100px" />    
                     <img src="https://i.imgur.com/DWlQQc4.gif" width="160px" height="100px" className='img3'/>                                          
-                        <TextField style={{backgroundColor:'#008000'}} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth color="primary"/>
-                        <TextField style={{backgroundColor:'#008000'}}id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
+                        <TextField style={{backgroundColor:'#008000'}} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel} value={userLogin.usuario} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth color="primary"/>
+                        <TextField style={{backgroundColor:'#008000'}} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel} value={userLogin.senha} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password'fullWidth />
                         <Box>
-                            <Link to='/home' className='text-decorator-none'>
                                 <Button type='submit' variant='contained' style={{color:'black', backgroundColor:'#008000'}}>
                                     Logar
                                 </Button>
-                            </Link>
                         </Box>
                     </form>
                     <Box display='flex' justifyContent='center' marginTop={2}>
@@ -27,10 +50,9 @@ function Login(){
                                 Não Tem uma conta?
                             </Typography>
                         </Box>
-                        <Typography  variant='subtitle1' gutterBottom align="center" style={{fontWeight: 'bold', color:'#05d805'}}>
-                            Crie sua conta
-                        </Typography>
-
+                        <Link to="/cadastrousuario">
+                        <Typography  variant='subtitle1' gutterBottom align="center" style={{fontWeight: 'bold', color:'#05d805'}}>Crie sua conta</Typography>
+                        </Link>
                     </Box>
                 </Box>
             </Grid>

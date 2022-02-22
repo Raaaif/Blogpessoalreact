@@ -16,10 +16,12 @@ function Navbar() {
                 <Toolbar variant="dense">
 
                     <Box className="backColor" >
-                        <Box mx={4} style={{ cursor: "pointer" }}>
+                        <Box mx={4} className="bColor" style={{ cursor: "pointer", color:'#05d805' }}>
+                            <Link to="/home" className='text-decorator-none'>
                             <Typography variant="h6" color="inherit">
-                                Home
+                               Home
                             </Typography>
+                            </Link>
                         </Box>
                         <Box mx={4} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
