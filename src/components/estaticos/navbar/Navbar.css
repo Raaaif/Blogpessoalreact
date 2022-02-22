@@ -1,0 +1,18 @@
+.back{
+    background: linear-gradient(36deg, #083add 0%, #4658a8 0%)!important;
+}
+.bar{
+    display:flex;
+    justify-content:center;
+}
+.title{
+    text-align: center;    
+
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+.cursor{
+    cursor:pointer;
+    color:#030303;
+}

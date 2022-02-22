@@ -1,0 +1,31 @@
+.h1{
+    background-color: #4b85cfc7;
+    justify-content:center;
+    border-radius: 30px;
+    padding: 5px 5px 0px 5px;
+    margin: 50px;
+    }
+img{
+    border-radius: 30px;
+    margin: 30px;
+}
+.caixa{
+    background-image: url(https://i.imgur.com/9k7mFYB.jpg)!important;
+    background-repeat: no-repeat!important;
+    width:100vh;
+    min-height: calc(100vh - 80px)!important;
+    background-size: cover!important;
+    background-position: center!important;
+}
+.titulo{
+    color:#ffffff!important;
+    font-weight: bold!important;
+}
+.botao{
+    border-color: #ffffff!important;
+    background-color: #4b85cfc7!important;
+    color: #ffffff!important;
+}
+.postagens{
+    background-color: #ffffff!important;
+}
