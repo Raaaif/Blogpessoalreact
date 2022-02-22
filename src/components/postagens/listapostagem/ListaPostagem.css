@@ -1,0 +1,12 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.img3{
+    background-image: url(https://i.imgur.com/Mwhug2F.jpg)!important;
+}
+
+.img2{
+    background-color: #b4e0f17c; 
+    justify-content:flex-start;
+}

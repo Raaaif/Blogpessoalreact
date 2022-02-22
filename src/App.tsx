@@ -5,6 +5,9 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
+import ListaTema from './components/temas/listatema/ListaTema';
+
 import './App.css';
 
 
@@ -30,7 +33,12 @@ function App() {
             <Route path='/cadastrousuario'>
               <CadastroUsuario />
             </Route>
-
+            <Route path='/temas'>
+              <ListaTema />
+            </Route>
+            <Route path='/posts'>
+              <ListaPostagem />
+            </Route>
           </div>
         </Switch>
       <Footer />
