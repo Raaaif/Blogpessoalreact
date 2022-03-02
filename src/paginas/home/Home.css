@@ -1,16 +1,16 @@
 .h1{
-    background-color: #4b85cfc7;
+    background-color: #2481bbd8;
     justify-content:center;
     border-radius: 30px;
     padding: 5px 5px 0px 5px;
-    margin: 50px;
+    margin: 100px;
     }
 img{
     border-radius: 30px;
     margin: 30px;
 }
 .caixa{
-    background-image: url(https://i.imgur.com/9k7mFYB.jpg)!important;
+    background-image: url(https://i.imgur.com/BLUJVbI.jpg)!important;
     background-repeat: no-repeat!important;
     width:100vh;
     min-height: calc(100vh - 80px)!important;
@@ -22,9 +22,9 @@ img{
     font-weight: bold!important;
 }
 .botao{
-    border-color: #ffffff!important;
-    background-color: #4b85cfc7!important;
-    color: #ffffff!important;
+    border-color: #2481bbd8!important;
+    background-color: #2481bbd8!important;
+    color: #0c0525!important;
 }
 .postagens{
     background-color: #ffffff!important;
@@ -32,5 +32,6 @@ img{
 
 .mario{
     padding-left: 150px;
-    padding-bottom: 300px;
+    padding-bottom: 210px;
+
 }

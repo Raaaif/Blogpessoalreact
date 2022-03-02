@@ -4,6 +4,7 @@ import{Link, useHistory} from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import {login} from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
+import { api } from '../../services/Service';
 import './Login.css';
 
 function Login(){
@@ -15,7 +16,7 @@ function Login(){
             usuario: '',
             senha: '',
             token: ''
-        }
+        } 
         )
 
         function updatedModel(e: ChangeEvent<HTMLInputElement>){
@@ -31,13 +32,25 @@ function Login(){
             }
         },[token])
 
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+        /* async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
                 await login(`/usuarios/logar`, userLogin, setToken)
 
                 alert('Usuário logado com sucesso!');
             }catch{
+                alert('Dados do usuário inconsistentes. Erro ao logar');
+            }
+        } */
+
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+            e.preventDefault();
+            try{
+                const resposta = await api.post(`/usuarios/logar`, userLogin)
+                setToken(resposta.data.token)
+                
+                alert('Usuário logado com sucesso!');
+            }catch(error){
                 alert('Dados do usuário inconsistentes. Erro ao logar');
             }
         }

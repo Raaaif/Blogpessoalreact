@@ -1,9 +1,9 @@
 .box1{
-    background: linear-gradient(36deg, #383030 0%, #4658a8 0%)!important;
+    background-image: url(https://i.imgur.com/EagUoid.png);
     height: 120px;
 }
 .box2{
-    background: linear-gradient(36deg, #383030 0%, #4658a8 0%)!important;
+    background-image: url(https://i.imgur.com/EagUoid.png); 
     height: 60px;
 }
 .redes{

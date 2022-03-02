@@ -30,17 +30,16 @@ function Footer() {
                                 <GitHubIcon className='redes' />
                             </a>
                         </Box>
-                    </Box>
-                    <Box className='box2'>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom className='textos'>© 2022 Copyright</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom >© 2022 Copyright</Typography>
                         </Box>
                         <Box>
                             <a target="_blank" href="">
-                                <Typography variant="subtitle2" gutterBottom className='textos' align="center">Dev.aneio</Typography>
+                                <Typography variant="subtitle2" gutterBottom align="center">Dev.aneio</Typography>
                             </a>
                         </Box>
                     </Box>
+
                 </Grid>
             </Grid>
         </>

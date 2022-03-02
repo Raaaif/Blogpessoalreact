@@ -15,29 +15,35 @@ function Navbar() {
                 <Toolbar variant="dense" className='bar'>
 
                     <Box display="flex" justifyContent="start" >
+                        <Link to='/home' className='text-decoration-none'>
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h5" color="inherit">
                                 Home
                             </Typography>
                         </Box>
+                        </Link>
+                        <Link to='/posts' className='text-decoration-none'>
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h5" color="inherit">
                                 Postagens
                             </Typography>
                         </Box>
+                        </Link>
+                        <Link to='/temas' className='text-decoration-none'>
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h5" color="inherit">
                                 Temas
                             </Typography>
                         </Box>
+                        </Link>
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h5" color="inherit">
                                 Cadastrar tema
                             </Typography>
                         </Box>
                         <Link to='/login' className='text-decoration-none'>
                         <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h5" color="inherit">
                                 Logout
                             </Typography>
                         </Box>
