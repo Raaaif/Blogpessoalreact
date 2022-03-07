@@ -1,15 +1,18 @@
 import React, {ChangeEvent, useState, useEffect} from 'react';
 import{Grid, Box, Typography, TextField, Button} from '@material-ui/core';
 import{Link, useHistory} from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import {login} from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import { api } from '../../services/Service';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
+import {toast} from 'react-toastify';
 
 function Login(){
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] =useState<UserLogin>(
         {
             id: 0,
@@ -28,22 +31,41 @@ function Login(){
 
         useEffect(()=>{
             if (token !== ''){
+                dispatch(addToken(token))
                 history.push('/home')
             }
         },[token])
 
-        /* async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
                 await login(`/usuarios/logar`, userLogin, setToken)
 
-                alert('Usuário logado com sucesso!');
+                toast.success("Usuário logado com sucesso!", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }catch{
-                alert('Dados do usuário inconsistentes. Erro ao logar');
+                toast.error("Dados do usuário inconsistentes. Erro ao logar!", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
-        } */
+        } 
 
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+        /* async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
                 const resposta = await api.post(`/usuarios/logar`, userLogin)
@@ -53,7 +75,7 @@ function Login(){
             }catch(error){
                 alert('Dados do usuário inconsistentes. Erro ao logar');
             }
-        }
+        } */
 
 return(
     <Grid container direction='row' justifyContent='center'>

@@ -25,6 +25,8 @@ img{
     border-color: #2481bbd8!important;
     background-color: #2481bbd8!important;
     color: #0c0525!important;
+    
+    
 }
 .postagens{
     background-color: #ffffff!important;
@@ -34,4 +36,8 @@ img{
     padding-left: 150px;
     padding-bottom: 210px;
 
+}
+
+.text-decorator-none{
+    text-decoration: none;
 }
