@@ -1,11 +1,11 @@
-import React, {useState, useEffect, ChangeEvent} from 'react';
-import {useHistory} from 'react-router-dom';
+import React , {useState, useEffect, ChangeEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import User from '../../models/User';
-import {cadastroUsuario} from '../../services/Service';
-import {Link} from 'react-router-dom';
-import './CadastroUsuario.css'
-import { Grid, Typography, Box, TextField, Button } from '@material-ui/core'
-import {toast} from 'react-toastify';
+import { cadastroUsuario } from '../../services/Service';
+import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import './CadastroUsuario.css';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -49,9 +49,9 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha === user.senha){
+        if(confirmarSenha == user.senha){
         cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        toast.success("Usuario cadastrado com sucesso", {
+        toast.success('Usuario cadastrado com sucesso', {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -60,9 +60,9 @@ function CadastroUsuario() {
             draggable: false,
             theme: "colored",
             progress: undefined,
-        });
+            });
         }else{
-            toast.error("Dados inconsistentes. Favor verificar as informações de cadastro", {
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -71,7 +71,7 @@ function CadastroUsuario() {
                 draggable: false,
                 theme: "colored",
                 progress: undefined,
-            });
+                });
         }
     }
 

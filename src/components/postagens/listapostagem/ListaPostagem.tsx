@@ -4,22 +4,21 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaPostagem.css';
-import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom'
-import { TokenState } from '../../../store/tokens/tokenReducer';
 import { useSelector } from 'react-redux';
-import {toast} from 'react-toastify';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { toast } from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
+  let history = useHistory();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-  let history = useHistory();
 
   useEffect(() => {
     if (token == "") {
-      toast.error("Você precisa estar logado", {
+      toast.error('Você precisa estar logado', {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -47,6 +46,7 @@ function ListaPostagem() {
     getPost()
 
   }, [posts.length])
+
 
   return (
     <>
